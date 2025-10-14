@@ -1,25 +1,15 @@
 import React from 'react';
-import { Navbar, Nav, Container } from 'react-bootstrap';
+import logo from '../assets/hero.jpeg'; // Asumo que esta es la imagen del logo
 
 function Header() {
   return (
-    <Navbar bg="dark" variant="dark" expand="lg" sticky="top">
-      <Container>
-        <Navbar.Brand href="#home">
-          {/* Aquí irá el logo */}
-          LEX GAR Asesorias Juridicas
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ms-auto">
-            <Nav.Link href="#home">Inicio</Nav.Link>
-            <Nav.Link href="#servicios">Servicios</Nav.Link>
-            <Nav.Link href="#nosotros">Nosotros</Nav.Link>
-            <Nav.Link href="#contacto">Contacto</Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+    <header>
+      <div className="logo-container">
+        <img src={logo} alt="Logo LEX GAR Asesorías Jurídicas" className="logo" />
+      </div>
+      <h1>LEX GAR</h1>
+      <p>ASESORÍAS JURÍDICAS</p>
+    </header>
   );
 }
 

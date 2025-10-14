@@ -1,45 +1,36 @@
 import React from 'react';
-import { Container, Row, Col, Card } from 'react-bootstrap';
 
 const services = [
   {
-    title: 'Derecho Penal',
-    description: 'Defensa y representación en todas las etapas del proceso penal, desde la investigación hasta el juicio oral.'
-  },
-  {
     title: 'Derecho Civil',
-    description: 'Asesoría en contratos, indemnizaciones, herencias, y todo tipo de litigios civiles.'
+    description: 'Asesoría en contratos, herencias, propiedades, y reclamaciones civiles.'
   },
   {
-    title: 'Derecho de Familia',
-    description: 'Representación en casos de divorcio, pensión alimenticia, cuidado personal y relación directa y regular.'
+    title: 'Derecho Penal',
+    description: 'Defensa penal profesional, acompañamiento en procesos judiciales y estrategias legales.'
   },
   {
-    title: 'Asesoría Empresarial',
-    description: 'Soporte legal integral para empresas, desde la constitución de sociedades hasta la resolución de conflictos comerciales.'
+    title: 'Derecho Familiar',
+    description: 'Divorcios, pensiones alimenticias, custodias y mediaciones familiares con empatía.'
+  },
+  {
+    title: 'Derecho Laboral',
+    description: 'Reclamos laborales, despidos injustificados y asesoramiento en relaciones laborales.'
   }
 ];
 
 function Services() {
   return (
-    <section id="servicios" className="py-5 bg-light">
-      <Container>
-        <h2 className="text-center mb-4">Nuestras Áreas de Práctica</h2>
-        <Row>
-          {services.map((service, index) => (
-            <Col md={6} lg={3} key={index} className="mb-4">
-              <Card className="h-100 shadow-sm">
-                <Card.Body>
-                  <Card.Title as="h4">{service.title}</Card.Title>
-                  <Card.Text>
-                    {service.description}
-                  </Card.Text>
-                </Card.Body>
-              </Card>
-            </Col>
-          ))}
-        </Row>
-      </Container>
+    <section id="servicios">
+      <h2>Áreas de Práctica</h2>
+      <div className="services">
+        {services.map((service, index) => (
+          <div className="card" key={index}>
+            <h3>{service.title}</h3>
+            <p>{service.description}</p>
+          </div>
+        ))}
+      </div>
     </section>
   );
 }
