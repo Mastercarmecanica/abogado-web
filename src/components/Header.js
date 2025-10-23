@@ -1,14 +1,15 @@
 import React from 'react';
-import logo from '../assets/hero.jpeg'; // Asumo que esta es la imagen del logo
+import logo from '../assets/hero.jpeg'; // Import the logo
 
 function Header() {
   return (
     <header>
-      <div className="logo-container">
-        <img src={logo} alt="Logo LEX GAR Asesorías Jurídicas" className="logo" />
+      <div className="hero-content">
+        <img src={logo} alt="LEX GAR Logo" className="hero-logo" />
+        <h1>LEX GAR Asesorías Jurídicas</h1>
+        <p>Comprometidos con la excelencia, la ética y la defensa de tus derechos.</p>
+        <button className="btn">Solicitar consulta</button>
       </div>
-      <h1>LEX GAR</h1>
-      <p>ASESORÍAS JURÍDICAS</p>
     </header>
   );
 }
