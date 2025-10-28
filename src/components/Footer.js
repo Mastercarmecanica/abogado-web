@@ -8,7 +8,9 @@ function Footer() {
       <p>© 2025 LEX GAR Asesorías Jurídicas</p>
       <p>contacto@lexgar.cl | +56 9 1234 5678</p>
       <p>Santiago de Chile</p>
-      <p><a href="https://www.instagram.com/lexgar.25" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i> lexgar.25</a></p>
+      <a href="https://www.instagram.com/lexgar.asesoriasjuridicas" target="_blank" rel="noopener noreferrer" class="footer-instagram-link">
+        <i class="fab fa-instagram"></i>
+      </a>
     </footer>
   );
 }

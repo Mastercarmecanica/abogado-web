@@ -245,6 +245,20 @@ body {
       margin-top: 15px;
     }
 
+    /* ===== FOOTER INSTAGRAM ===== */
+    .footer-instagram-link {
+      display: inline-block;
+      margin-top: 15px;
+      font-size: 2rem; /* Larger icon */
+      color: #fff;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .footer-instagram-link:hover {
+      transform: scale(1.2); /* Grow on hover */
+      color: #c9a44d; /* Change color to gold on hover */
+    }
+
     @media (max-width: 768px) {
       .hero-logo {
         width: 200px;
