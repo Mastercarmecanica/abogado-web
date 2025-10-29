@@ -1,10 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import './Hero.css';
 
+import image1 from '../assets/attractive-young-lawyer-office-business-600nw-2595917377.webp';
+import image3 from '../assets/imagen 1.jpg';
+import image4 from '../assets/imagen 2.webp';
+import image5 from '../assets/mujer-negocios-abogado-o-juez-masculino-consultan-tienen-reunion-equipo-cliente-bufete-abogados-oficina-concepto-servicios-juridicos-legales_28283-1825.jpg';
+import image6 from '../assets/XOAAYNBLHVCJ5FIT3EOER3HXF4.jpg';
+
 const images = [
-  'https://images.unsplash.com/photo-1521737711867-ee1ab9207853?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
-  'https://images.unsplash.com/photo-1522071820075-ef24470175f4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
-  'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
+  image1,
+  image3,
+  image4,
+  image5,
+  image6,
 ];
 
 const Hero = () => {
@@ -21,8 +29,8 @@ const Hero = () => {
     <section className="hero-section">
       <img src={images[currentImage]} alt="Background" className="hero-slideshow-image" />
       <div className="hero-content">
-        <h1>Soluciones Legales a tu Alcance</h1>
-        <p>Comprometidos con la defensa de tus derechos.</p>
+        <h1><span className="lexgar-highlight">LEXGAR</span> Soluciones Legales a tu Alcance</h1>
+        <p><span className="lexgar-highlight">LEXGAR</span> Comprometidos con la defensa de tus derechos.</p>
         <a href="#contact" className="cta-button">Contáctanos</a>
       </div>
     </section>

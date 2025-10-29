@@ -15,7 +15,7 @@
   object-fit: cover;
   z-index: 0; /* Image at the bottom */
   opacity: 0; /* Start transparent for fade-in */
-  animation: imageFade 15s infinite; /* Total duration for 3 images (5s per image) */
+  animation: imageFade 5s infinite; /* Each image fades in and out over 5 seconds */
 }
 
 .hero-section::before {
@@ -29,6 +29,13 @@
   z-index: 1; /* Overlay on top of image */
 }
 
+@keyframes imageFade {
+  0% { opacity: 0; }
+  20% { opacity: 1; } /* Fade in */
+  80% { opacity: 1; } /* Stay visible */
+  100% { opacity: 0; } /* Fade out */
+}
+
 .hero-content {
   position: relative;
   z-index: 2; /* Content on top of overlay */
@@ -37,19 +44,46 @@
   padding-top: 20vh; /* Adjust as needed */
 }
 
-@keyframes imageFade {
-  0% { opacity: 0; } /* Start transparent */
-  10% { opacity: 1; } /* Fade in */
-  23% { opacity: 1; } /* Stay visible */
-  33% { opacity: 0; } /* Fade out */
+.lexgar-highlight {
+  font-weight: bold;
+  color: #c9a44d; /* Gold color to match the button */
+}
 
-  33.01% { opacity: 0; } /* Start transparent for next image */
-  43% { opacity: 1; } /* Fade in */
-  56% { opacity: 1; } /* Stay visible */
-  66% { opacity: 0; } /* Fade out */
+.cta-button {
+  background-color: #c9a44d; /* Gold color */
+  color: #fff;
+  padding: 15px 40px; /* Increased padding */
+  border: none;
+  border-radius: 30px;
+  font-size: 1.1rem; /* Increased font size */
+  cursor: pointer;
+  transition: 0.3s;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 30px; /* Increased margin-top */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Added box-shadow */
+}
 
-  66.01% { opacity: 0; } /* Start transparent for next image */
-  76% { opacity: 1; } /* Fade in */
-  89% { opacity: 1; } /* Stay visible */
-  100% { opacity: 0; } /* Fade out */
+.cta-button:hover {
+  background-color: #b28c3a; /* Darker gold on hover */
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+
+  .cta-button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  .hero-content {
+    padding: 10vh 20px; /* Adjust padding for mobile */
+  }
 }
