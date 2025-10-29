@@ -1,33 +1,16 @@
-import React, { useState } from 'react';
-import logo from '../assets/hero.jpeg'; // Import the logo
-import { Modal, Button } from 'react-bootstrap';
-import ContactForm from './ContactForm';
+import React from 'react';
 
 function Header() {
-  const [show, setShow] = useState(false);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
   return (
-    <header>
-      <div className="hero-content">
-        <img src={logo} alt="LEX GAR Logo" className="hero-logo" />
-        <h1>LEX GAR Asesorías Jurídicas</h1>
-        <p>Comprometidos con la excelencia, la ética y la defensa de tus derechos.</p>
-        <Button variant="primary" onClick={handleShow}>
-          Solicitar consulta
-        </Button>
-      </div>
-
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Formulario de Contacto</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <ContactForm />
-        </Modal.Body>
-      </Modal>
+    <header className="main-header">
+      <nav>
+        <ul>
+          <li><a href="#about">Sobre Nosotros</a></li>
+          <li><a href="#services">Servicios</a></li>
+          <li><a href="#team">Nuestro Equipo</a></li>
+          <li><a href="#contact">Contacto</a></li>
+        </ul>
+      </nav>
     </header>
   );
 }

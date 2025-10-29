@@ -1,0 +1,55 @@
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #000; /* Fallback background */
+}
+
+.hero-slideshow-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0; /* Image at the bottom */
+  opacity: 0; /* Start transparent for fade-in */
+  animation: imageFade 15s infinite; /* Total duration for 3 images (5s per image) */
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  z-index: 1; /* Overlay on top of image */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2; /* Content on top of overlay */
+  color: white;
+  text-align: center;
+  padding-top: 20vh; /* Adjust as needed */
+}
+
+@keyframes imageFade {
+  0% { opacity: 0; } /* Start transparent */
+  10% { opacity: 1; } /* Fade in */
+  23% { opacity: 1; } /* Stay visible */
+  33% { opacity: 0; } /* Fade out */
+
+  33.01% { opacity: 0; } /* Start transparent for next image */
+  43% { opacity: 1; } /* Fade in */
+  56% { opacity: 1; } /* Stay visible */
+  66% { opacity: 0; } /* Fade out */
+
+  66.01% { opacity: 0; } /* Start transparent for next image */
+  76% { opacity: 1; } /* Fade in */
+  89% { opacity: 1; } /* Stay visible */
+  100% { opacity: 0; } /* Fade out */
+}

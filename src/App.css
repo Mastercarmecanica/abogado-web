@@ -32,21 +32,33 @@ body {
     }
 
     /* ===== HERO ===== */
-    header {
-      position: relative;
-      background: url('https://images.unsplash.com/photo-1575320181282-61e1e6fc1a8d?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-      color: white;
-      text-align: center;
-      padding: 180px 20px 160px;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
-    }
+    .main-header {
+  background: #0b1c3a;
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
 
-    header::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(11,28,58,0.65);
-    }
+.main-header nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.main-header nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  transition: color 0.3s ease;
+}
+
+.main-header nav ul li a:hover {
+  color: #c8a47e;
+}
 
     .hero-content {
       position: relative;
@@ -245,18 +257,29 @@ body {
       margin-top: 15px;
     }
 
-    /* ===== FOOTER INSTAGRAM ===== */
-    .footer-instagram-link {
-      display: inline-block;
-      margin-top: 15px;
-      font-size: 2rem; /* Larger icon */
+    .instagram-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 25px;
+      left: 25px;
+      background-color: #E1306C;
       color: #fff;
-      transition: transform 0.3s ease, color 0.3s ease;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+      z-index: 100;
+      transition: transform 0.3s ease;
     }
 
-    .footer-instagram-link:hover {
-      transform: scale(1.2); /* Grow on hover */
-      color: #c9a44d; /* Change color to gold on hover */
+    .instagram-float:hover {
+      transform: scale(1.1);
+      background-color: #C13584;
+    }
+
+    .instagram-float i {
+      margin-top: 15px;
     }
 
     @media (max-width: 768px) {
