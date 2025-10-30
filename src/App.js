@@ -43,14 +43,7 @@ function App() {
       <Footer />
 
       {/* ======= BOTÓN FLOTANTE WHATSAPP ======= */}
-      <div className="whatsapp-container"> {/* New container for button and options */}
-        <button
-          className="whatsapp-float"
-          onClick={toggleWhatsappOptions}
-          aria-label="Opciones de contacto WhatsApp"
-        >
-          <i className="fab fa-whatsapp"></i>
-        </button>
+      <div className={`whatsapp-container ${showWhatsappOptions ? 'open' : ''}`}>
         {showWhatsappOptions && (
           <div className="whatsapp-options">
             <a
@@ -76,6 +69,13 @@ function App() {
             </a>
           </div>
         )}
+        <button
+          className="whatsapp-float"
+          onClick={toggleWhatsappOptions}
+          aria-label="Opciones de contacto WhatsApp"
+        >
+          <i className="fab fa-whatsapp"></i>
+        </button>
         <div className="tooltip">Habla con un abogado ahora</div>
       </div>
     </div>
