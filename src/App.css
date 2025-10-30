@@ -338,9 +338,6 @@ body {
       bottom: 25px;
       right: 25px;
       z-index: 100;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end; /* Align options to the right */
     }
 
     .whatsapp-float {
@@ -378,11 +375,13 @@ body {
     }
 
     .whatsapp-options {
+      position: absolute;
+      bottom: 80px; /* Position above the button */
+      right: 0;
       background-color: #0b1c3a; /* Dark background */
       border-radius: 10px;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
       padding: 10px 0;
-      margin-bottom: 10px; /* Space between options and button */
       display: flex;
       flex-direction: column;
       gap: 5px;
@@ -390,6 +389,7 @@ body {
       transform: translateY(10px);
       transition: opacity 0.3s ease-out, transform 0.3s ease-out;
       pointer-events: none; /* Allow clicks to pass through when hidden */
+      z-index: 101;
     }
 
     .whatsapp-container.open .whatsapp-options {
