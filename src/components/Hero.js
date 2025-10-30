@@ -29,8 +29,8 @@ const Hero = () => {
     <section className="hero-section">
       <img src={images[currentImage]} alt="Background" className="hero-slideshow-image" />
       <div className="hero-content">
-        <h1><span className="lexgar-highlight">LEXGAR</span> Soluciones Legales a tu Alcance</h1>
-        <p><span className="lexgar-highlight">LEXGAR</span> Comprometidos con la defensa de tus derechos.</p>
+        <h1><span className="lexgar-highlight">LEXGAR</span><br/>Soluciones a tu Alcance</h1>
+        <p>Comprometidos con la defensa de tus derechos.</p>
         <a href="#contact" className="cta-button">Contáctanos</a>
       </div>
     </section>

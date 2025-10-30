@@ -86,4 +86,8 @@
   .hero-content {
     padding: 10vh 20px; /* Adjust padding for mobile */
   }
+
+  .hero-section {
+    height: 60vh; /* Ajustar la altura para móviles */
+  }
 }

@@ -31,34 +31,160 @@ body {
       transform: scale(1.05);
     }
 
-    /* ===== HERO ===== */
+    /* ===== HEADER ===== */
     .main-header {
-  background: #0b1c3a;
-  padding: 20px 0;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  width: 100%;
-}
+      background: linear-gradient(90deg, #0b1c3a 0%, #1a3a60 100%); /* Subtle gradient */
+      padding: 20px 50px; /* More vertical and horizontal padding */
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); /* Even stronger shadow for depth */
+      border-bottom: 3px solid #c9a44d; /* A golden border at the bottom */
+    }
 
-.main-header nav ul {
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
+    .header-logo-container {
+      display: flex;
+      align-items: center;
+    }
 
-.main-header nav ul li a {
-  color: white;
-  text-decoration: none;
-  padding: 10px 20px;
-  transition: color 0.3s ease;
-}
+    .header-logo {
+      width: 150px; /* Larger logo */
+      height: auto;
+      filter: drop_shadow(0 0 15px rgba(201, 164, 77, 0.9)); /* More intense glow */
+      transition: transform 0.4s ease-in-out;
+    }
 
-.main-header nav ul li a:hover {
-  color: #c8a47e;
-}
+    .header-logo:hover {
+      transform: scale(1.1); /* More pronounced hover */
+    }
+
+    .main-header nav ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      max-width: 800px; /* Increased navigation width */
+      justify-content: flex-end;
+      flex-grow: 1;
+    }
+
+    .main-header nav ul li a {
+      color: #f0f0f0; /* Slightly off-white for better contrast */
+      text-decoration: none;
+      padding: 12px 25px; /* More padding for links */
+      transition: all 0.3s ease-in-out;
+      font-weight: 600; /* Bolder font */
+      position: relative;
+      font-size: 1.1rem; /* Larger font size */
+      text-transform: uppercase; /* Uppercase for modern look */
+      letter-spacing: 1px; /* Added letter spacing */
+    }
+
+    .main-header nav ul li a:hover {
+      color: #ffd700; /* Brighter golden color on hover */
+      transform: translateY(-5px); /* More dramatic lift */
+    }
+
+    .main-header nav ul li a::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: -8px; /* Adjusted position */
+      transform: translateX(-50%);
+      width: 0;
+      height: 4px; /* Thicker underline */
+      background-color: #ffd700; /* Golden underline */
+      transition: width 0.3s ease-in-out, bottom 0.3s ease-in-out;
+    }
+
+    .main-header nav ul li a:hover::after {
+      width: 85%; /* Wider underline on hover */
+      bottom: -4px; /* Move underline up more on hover */
+    }
+
+    /* Hamburger menu for mobile */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 35px; /* Slightly larger hamburger */
+      height: 30px;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .menu-toggle div {
+      width: 35px;
+      height: 4px; /* Thicker lines */
+      background-color: #ffd700; /* Golden lines */
+      border-radius: 10px;
+      transition: all 0.3s linear;
+      transform-origin: 1px;
+    }
+
+    .menu-toggle.open div:nth-child(1) {
+      transform: rotate(45deg);
+    }
+
+    .menu-toggle.open div:nth-child(2) {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+
+    .menu-toggle.open div:nth-child(3) {
+      transform: rotate(-45deg);
+    }
+
+    @media (max-width: 768px) {
+      .main-header {
+        padding: 15px 20px;
+      }
+
+      .header-logo {
+        width: 120px; /* Adjust logo size for mobile */
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+
+      .main-header nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px; /* Adjusted position below header */
+        left: 0;
+        width: 100%;
+        background: linear-gradient(180deg, #0b1c3a 0%, #1a3a60 100%); /* Gradient for mobile menu */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        padding: 20px 0;
+        max-width: none;
+      }
+
+      .main-header nav ul.open {
+        display: flex;
+      }
+
+      .main-header nav ul li {
+        text-align: center;
+        margin: 10px 0;
+      }
+
+      .main-header nav ul li a {
+        padding: 15px 0;
+        display: block;
+        font-size: 1.2rem;
+        color: #f0f0f0;
+      }
+
+      .main-header nav ul li a::after {
+        bottom: -10px; /* Adjust underline position for mobile */
+      }
+    }
 
     .hero-content {
       position: relative;
@@ -261,8 +387,8 @@ body {
       position: fixed;
       width: 60px;
       height: 60px;
-      bottom: 25px;
-      left: 25px;
+      bottom: 95px; /* 25px (WhatsApp) + 60px (altura botón) + 10px (margen) */
+      right: 25px;
       background-color: #E1306C;
       color: #fff;
       border-radius: 50%;

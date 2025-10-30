@@ -14,49 +14,6 @@ body {
 }
 
 /* ======= HEADER ======= */
-header {
-  background: url('https://www.toptal.com/designers/subtlepatterns/uploads/marble_1.png') center/cover no-repeat;
-  color: var(--azul-oscuro);
-  text-align: center;
-  padding: 3.5rem 1rem 4rem;
-  position: relative;
-  border-bottom: 4px solid var(--dorado);
-}
-
-.logo-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 1rem;
-}
-
-.logo {
-  width: 100%;
-  max-width: 380px;
-  height: auto;
-  object-fit: contain;
-  display: block;
-  transition: transform 0.8s ease, filter 0.8s ease;
-  filter: drop-shadow(0 0 10px rgba(201, 164, 77, 0.4));
-}
-
-.logo:hover {
-  transform: scale(1.08);
-  filter: drop-shadow(0 0 20px rgba(201, 164, 77, 0.6));
-}
-
-header h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.7rem;
-  letter-spacing: 2px;
-  margin: 0.5rem 0 0;
-}
-
-header p {
-  font-size: 1.15rem;
-  letter-spacing: 1px;
-  margin-top: 0.3rem;
-}
 
 /* ======= SECCIONES ======= */
 section {
