@@ -141,7 +141,7 @@ body {
 
     @media (max-width: 768px) {
       .main-header {
-        padding: 15px 20px;
+        padding: 15px 25px; /* Slightly increased right padding for more space */
       }
 
       .header-logo {
@@ -150,16 +150,17 @@ body {
 
       .menu-toggle {
         display: flex;
+        margin-left: auto; /* Push hamburger to the far right */
       }
 
       .main-header nav ul {
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 70px; /* Adjusted position below header */
+        top: 70px;
         left: 0;
         width: 100%;
-        background: linear-gradient(180deg, #0b1c3a 0%, #1a3a60 100%); /* Gradient for mobile menu */
+        background: linear-gradient(180deg, #0b1c3a 0%, #1a3a60 100%);
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
         padding: 20px 0;
         max-width: none;
@@ -182,7 +183,7 @@ body {
       }
 
       .main-header nav ul li a::after {
-        bottom: -10px; /* Adjust underline position for mobile */
+        bottom: -10px;
       }
     }
 
@@ -331,13 +332,20 @@ body {
       margin: 5px 0;
     }
 
-    /* ===== WHATSAPP ===== */
-    .whatsapp-float {
+    /* ===== WHATSAPP & INSTAGRAM FLOTANTES ===== */
+    .whatsapp-container {
       position: fixed;
-      width: 60px;
-      height: 60px;
       bottom: 25px;
       right: 25px;
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end; /* Align options to the right */
+    }
+
+    .whatsapp-float {
+      width: 60px;
+      height: 60px;
       background-color: #25d366;
       color: #fff;
       border-radius: 50%;
@@ -347,6 +355,12 @@ body {
       z-index: 100;
       transition: transform 0.3s ease;
       animation: pulse 2.5s infinite;
+      border: none; /* Ensure it looks like a button */
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10px; /* Space between options and button */
     }
 
     .whatsapp-float:hover {
@@ -360,10 +374,46 @@ body {
       100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
     }
 
+    .whatsapp-options {
+      background-color: #0b1c3a; /* Dark background */
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      padding: 10px 0;
+      /* margin-bottom: 10px;  Space between options and button - handled by whatsapp-float margin-top */
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+      pointer-events: none; /* Allow clicks to pass through when hidden */
+    }
+
+    .whatsapp-container .whatsapp-options {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .whatsapp-options a {
+      color: #f0f0f0;
+      text-decoration: none;
+      padding: 8px 15px;
+      display: block;
+      font-size: 0.95rem;
+      white-space: nowrap; /* Prevent text wrapping */
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .whatsapp-options a:hover {
+      background-color: #1a3a60; /* Slightly lighter background on hover */
+      color: #ffd700; /* Golden text on hover */
+    }
+
     .tooltip {
-      position: fixed;
-      bottom: 95px;
-      right: 30px;
+      position: absolute; /* Changed to absolute relative to whatsapp-container */
+      bottom: 75px; /* Adjusted position */
+      right: 5px; /* Adjusted position */
       background: #0a1a3c;
       color: #fff;
       padding: 6px 12px;
@@ -380,7 +430,7 @@ body {
     }
 
     .whatsapp-float i {
-      margin-top: 15px;
+      margin-top: 0; /* No longer needed as flexbox centers it */
     }
 
     .instagram-float {
