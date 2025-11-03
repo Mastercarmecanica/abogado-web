@@ -1,0 +1,78 @@
+.contact-section {
+  padding: 60px 0;
+  background-color: #fff;
+}
+
+.contact-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.contact-details, .contact-lawyers {
+  background-color: #f9f9f9;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.contact-details h3, .contact-lawyers h3 {
+  font-size: 1.8rem;
+  color: #c5a47e;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.contact-details p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.contact-details p strong {
+  color: #333;
+}
+
+.contact-details i {
+  margin-right: 12px;
+  color: #c5a47e;
+  width: 20px; /* Ancho fijo para alinear los íconos */
+  text-align: center;
+}
+
+.contact-details a, .contact-lawyers a {
+  color: #c5a47e;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-details a:hover, .contact-lawyers a:hover {
+  color: #333;
+}
+
+.contact-lawyers ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-lawyers li {
+  font-size: 1.1rem;
+  color: #555;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-lawyers li:last-child {
+  border-bottom: none;
+}
+
+.contact-lawyers li strong {
+  color: #333;
+  margin-bottom: 5px;
+}
