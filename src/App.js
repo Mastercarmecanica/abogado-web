@@ -76,7 +76,6 @@ function App() {
         >
           <i className="fab fa-whatsapp"></i>
         </button>
-        <div className="tooltip">Habla con un abogado ahora</div>
       </div>
     </div>
   );
