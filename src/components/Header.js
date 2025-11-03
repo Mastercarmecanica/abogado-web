@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import logo from '../assets/hero.png'; // Importa tu logo
 
 function Header() {
@@ -11,7 +12,9 @@ function Header() {
   return (
     <header className="main-header">
       <div className="header-logo-container">
-        <img src={logo} alt="LEXGAR Logo" className="header-logo" />
+        <Link to="/">
+          <img src={logo} alt="LEXGAR Logo" className="header-logo" />
+        </Link>
       </div>
       <div className={`menu-toggle ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
         <div></div>
@@ -20,10 +23,10 @@ function Header() {
       </div>
       <nav>
         <ul className={isOpen ? 'open' : ''}>
-          <li><a href="#about" onClick={toggleMenu}>Sobre Nosotros</a></li>
-          <li><a href="#services" onClick={toggleMenu}>Servicios</a></li>
-          <li><a href="#team" onClick={toggleMenu}>Nuestro Equipo</a></li>
-          <li><a href="#contact" onClick={toggleMenu}>Contacto</a></li>
+          <li><Link to="/nosotros" onClick={toggleMenu}>Sobre Nosotros</Link></li>
+          <li><Link to="/servicios" onClick={toggleMenu}>Servicios</Link></li>
+          <li><Link to="/equipo" onClick={toggleMenu}>Nuestro Equipo</Link></li>
+          <li><Link to="/contacto" onClick={toggleMenu}>Contacto</Link></li>
         </ul>
       </nav>
     </header>

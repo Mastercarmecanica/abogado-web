@@ -1,23 +1,42 @@
 import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
+
+// Componentes de la página
 import Header from './components/Header';
+import Footer from './components/Footer';
 import Hero from './components/Hero';
-import About from './components/About';
-import Services from './components/Services';
 import Trust from './components/Trust';
 import Testimonials from './components/Testimonials';
-import Team from './components/Team';
 import Cases from './components/Cases';
-import Footer from './components/Footer';
+
+// Páginas
+import About from './components/About';
+import Services from './components/Services';
+import Team from './components/Team';
+import Contact from './components/Contact';
+
+// Página de Inicio
+function Home() {
+  return (
+    <>
+      <Hero />
+      <main>
+        <Trust />
+        <Testimonials />
+        <Cases />
+      </main>
+    </>
+  );
+}
 
 function App() {
-  const [showWhatsappOptions, setShowWhatsappOptions] = useState(false); // State for WhatsApp options
+  const [showWhatsappOptions, setShowWhatsappOptions] = useState(false);
 
   const toggleWhatsappOptions = () => {
     setShowWhatsappOptions(!showWhatsappOptions);
   };
 
-  // WhatsApp numbers for different matters
   const whatsappNumbers = {
     civil: '+56956328904',
     familia: '+56939673735',
@@ -33,55 +52,55 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <Header />
-      <Hero />
-      <About />
-      <Services />
-      <main>
-        <Trust />
-        <Testimonials />
-        <Team />
-        <Cases />
-      </main>
-      <Footer />
+    <Router>
+      <div className="App">
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/nosotros" element={<About />} />
+          <Route path="/servicios" element={<Services />} />
+          <Route path="/equipo" element={<Team />} />
+          <Route path="/contacto" element={<Contact />} />
+        </Routes>
+        <Footer />
 
-      {/* ======= BOTÓN FLOTANTE WHATSAPP ======= */}
-      <div className={`whatsapp-container ${showWhatsappOptions ? 'open' : ''}`}>
-        {showWhatsappOptions && (
-          <div className="whatsapp-options">
-            <a
-              href={getWhatsappLink(whatsappNumbers.civil, "Hola, quisiera una asesoría en Materia Civil.")}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Materia Civil
-            </a>
-            <a
-              href={getWhatsappLink(whatsappNumbers.familia, "Hola, quisiera una asesoría en Materia Familia.")}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Materia Familia
-            </a>
-            <a
-              href={getWhatsappLink(whatsappNumbers.penal, "Hola, quisiera una asesoría en Materia Penal.")}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Materia Penal
-            </a>
-          </div>
-        )}
-        <button
-          className="whatsapp-float"
-          onClick={toggleWhatsappOptions}
-          aria-label="Opciones de contacto WhatsApp"
-        >
-          <i className="fab fa-whatsapp"></i>
-        </button>
+        {/* ======= BOTÓN FLOTANTE WHATSAPP ======= */}
+        <div className={`whatsapp-container ${showWhatsappOptions ? 'open' : ''}`}>
+          {showWhatsappOptions && (
+            <div className="whatsapp-options">
+              <a
+                href={getWhatsappLink(whatsappNumbers.civil, "Hola, quisiera una asesoría en Materia Civil.")}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Materia Civil
+              </a>
+              <a
+                href={getWhatsappLink(whatsappNumbers.familia, "Hola, quisiera una asesoría en Materia Familia.")}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Materia Familia
+              </a>
+              <a
+                href={getWhatsappLink(whatsappNumbers.penal, "Hola, quisiera una asesoría en Materia Penal.")}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Materia Penal
+              </a>
+            </div>
+          )}
+          <button
+            className="whatsapp-float"
+            onClick={toggleWhatsappOptions}
+            aria-label="Opciones de contacto WhatsApp"
+          >
+            <i className="fab fa-whatsapp"></i>
+          </button>
+        </div>
       </div>
-    </div>
+    </Router>
   );
 }
 
